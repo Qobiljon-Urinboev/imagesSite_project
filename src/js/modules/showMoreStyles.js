@@ -24,7 +24,7 @@ const showMoreStyles = (trigger, wrapper) => {
 
         });
     }
-
+    
 };
 
 

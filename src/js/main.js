@@ -4,6 +4,11 @@ import form from './modules/forms';
 import mask from './modules/mask';
 import checkNumInputs from './modules/checkTextInputs';
 import showMoreStyles from './modules/showMoreStyles';
+import calc from './modules/calc';
+import imgSize from './modules/imgSize';
+import accordion from './modules/accordion';
+import burger from './modules/burger';
+import filter from './modules/filter';
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
     modal();
@@ -14,4 +19,9 @@ window.addEventListener('DOMContentLoaded', () => {
     checkNumInputs('[name="name"]');
     checkNumInputs('[name="message"]');
     showMoreStyles('.button-styles', '#styles .row');
+    calc('#size', '#material', '#options', '.promocode', '.calc-price');
+    imgSize('.sizes-block');
+    accordion('.accordion-heading', '.accordion-block');
+    burger('.burger-menu', '.burger');
+    filter();
 });
