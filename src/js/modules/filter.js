@@ -7,7 +7,7 @@ const filter = () => {
     const btnGuy = menu.querySelector('.guy');
     const btnLovers = menu.querySelector('.lovers');
     const btnGrandmother = menu.querySelector('.grandmother');
-    const btnGrandded = menu.querySelector('.grandded');
+    const btnGrandded = menu.querySelector('.granddad');
     const wrapper = document.querySelector('.portfolio-wrapper');
     const markAll = wrapper.querySelectorAll('.all');
     const markGirl = wrapper.querySelectorAll('.girl');
@@ -34,35 +34,28 @@ const filter = () => {
             no.classList.add('animated', 'fadeIn');
         }
     };
-    btnAll.addEventListener('click', () => {
-        typeFilter(markAll);
-    });
 
-    btnLovers.addEventListener('click', () => {
-        typeFilter(markLovers);
-    });
-    btnGirl.addEventListener('click', () => {
-        typeFilter(markGirl);
-    });
-    btnChef.addEventListener('click', () => {
-        typeFilter(markChef);
-    });
-    btnGuy.addEventListener('click', () => {
-        typeFilter(markGuy);
-    });
-    btnGrandmother.addEventListener('click', () => {
-        typeFilter();
-    });
-    btnGrandded.addEventListener('click', () => {
-        typeFilter();
-    });
+    const clickBtn = (btn, btnAll)=>{
+        btn.addEventListener('click', () => {
+            typeFilter(btnAll);
+        });
+    };
+    clickBtn(btnAll, markAll);
+    clickBtn(btnLovers, markLovers);
+    clickBtn(btnGirl, markGirl);
+    clickBtn(btnChef, markChef);
+    clickBtn(btnGuy, markGuy);
+    clickBtn(btnGrandmother);
+    clickBtn(btnGrandded);
+    
+
+    
 
     menu.addEventListener('click', (e) => {
-        console.log('menuu');
         let target = e.target;
         console.log(target);
 
-        if (target) {
+        if (target && target.tagName == 'LI') {
             items.forEach(item => item.classList.remove('active'));
             target.classList.add('active');
         }
